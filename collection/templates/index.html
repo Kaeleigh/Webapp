@@ -5,7 +5,8 @@
 {% endblock title %}
 
 {% block content %}
-  <h1>Hello World</h1>
-  <!-- here is the variable we are passing in -->
-  <p>This is my name: {{ thing|title }}</p>
+  {% for word in words %}
+  <h2>{{ word.name }}</h2>
+  <p>{{ word.description }}</p>
+  {% endfor %}
 {% endblock content %}

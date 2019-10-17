@@ -1,13 +1,11 @@
 from django.shortcuts import render
+from collection.models import Word
 
 # Create your views here.
 def index(request):
-    # defining the variable
-    number = 6
-    # defining string variable
-    thing = "Lucy Lou"
+
+    words = Word.objects.all()
     # passing the variable to the views
     return render(request, 'index.html', {
-        'number': number,
-        'thing' : thing,
+        'words' : words,
     })
