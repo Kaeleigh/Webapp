@@ -9,3 +9,11 @@ def index(request):
     return render(request, 'index.html', {
         'words' : words,
     })
+
+def word_detail(request, slug):
+    #grab the object
+    word = Word.objects.get(slug=slug)
+    #pass to the template
+    return render(request, 'words/word_detail.html', {
+        'word': word,
+    })

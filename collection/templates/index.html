@@ -6,7 +6,8 @@
 
 {% block content %}
   {% for word in words %}
-  <h2>{{ word.name }}</h2>
+  <h2><a href="{% url 'word_detail' slug=word.slug %}">
+      {{ word.name }}</a></h2>
   <p>{{ word.description }}</p>
   {% endfor %}
 {% endblock content %}
